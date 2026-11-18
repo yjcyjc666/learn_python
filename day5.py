@@ -1,0 +1,18 @@
+name = input("你叫什么名字?")
+# 下面是功能测试部分
+print(f"你好，{name},欢迎来到day5!")
+a = input("输入一个整数!")
+b = input("输入一个整数!")
+print(f"相加结果:{a+b}")
+c = int(input("输入一个整数!"))
+d = float(input("输入一个数!(可带小数)"))
+print(f"相加结果:{c+d}")
+# 下面是账单部分
+price = float(input("请输入外卖的单价"))
+red_packet = int(input("请输入红包减免金额"))
+delivery_fee = float(input("请输入配送费"))
+monthly_count = int(input("请输入点单次数"))
+per_order = round(price-red_packet+delivery_fee,2)
+monthly_total = round(per_order*monthly_count,2)
+print(f"本单实际支付:{per_order}")
+print(f"本月总金额:{monthly_total}")
