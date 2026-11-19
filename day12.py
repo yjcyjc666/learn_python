@@ -12,23 +12,26 @@ text = f.read ()
 f.close ()
 words = jieba.lcut(text)
 stopwords = ["的","了","是","在","和","不","有","也","这","那"]
-clean_words = []
-for word in words:
-    if word == "\n":
-        continue
-    if word in stopwords:
-        continue
-    if word in "，。；：""''（）——":
-        continue
-    clean_words.append(word)
-print(clean_words)
+def clean_words_list(words):
+    clean_words = []
+    for word in words:
+        if word == "\n":
+            continue
+        if word in stopwords:
+            continue
+        if word in "，。；：""''（）——":
+            continue
+        clean_words.append(word)
+    return clean_words
+total = clean_words_list(words)
+print(total)
 counts = {}
-for word in clean_words:
+for word in total:
     if word in counts:
         counts[word] = counts[word] + 1
     else:
         counts[word] = 1
-top10 = sorted (counts.items(),key=lambda x:x[1],reverse=True)[:10]
+top10 = sorted(counts.items(),key=lambda x:x[1],reverse=True)[:10]
 print(top10)
 for word,num in top10:
     print(f"{word}出现了{num}次")
