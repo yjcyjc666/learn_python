@@ -1,0 +1,1 @@
+RAG means retrieval augmented generation. A vector database stores embeddings. Retrieval finds the nearest neighbors. Answers come from real documents.
