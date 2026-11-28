@@ -1,0 +1,1 @@
+Vector databases store embeddings of documents. When a user asks a question, the system finds the most similar passages and sends them to a large language model. This pattern is called retrieval augmented generation.
